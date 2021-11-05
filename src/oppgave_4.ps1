@@ -20,9 +20,8 @@ function kortstokkTilStreng {
     )
     $streng = ""
     foreach ($kort in $kortstokk) {
-        $streng = $streng + "$($kort.suit[0])" + $($kort.value[0]) + ","
-        # Skrive ut kortnavn og nummer for å sjekke om ting blir riktig.
-        #"$a$i $($kort.suit[0])$($kort.value[0]) `r`n"
+        # Value-feltet i json-dataene skal ikke ha [0], da dette vil gi "1" i stedet for "10" på tierne.
+        $streng = $streng + "$($kort.suit[0])" + $($kort.value) + ","
     }
 
     # Ved siste kjøring, lagre hele strengen fra foreach, minus siste karakter som var kommaet.
