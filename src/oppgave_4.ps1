@@ -36,7 +36,7 @@ function kortstokkTilStreng {
     return $streng
 }
 
-# Hvis det gikk bra å hente inn kortstokken, kjørt funksjonen.
+# Hvis det gikk bra å hente inn kortstokken, kjør funksjonen.
 if ($fikkKortstokk) {
     Write-Output "Kortstokk: $(kortstokkTilStreng -kortstokk $kortstokk)"
 }

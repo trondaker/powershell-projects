@@ -18,25 +18,45 @@ function kortstokkTilStreng {
         [object[]]
         $kortstokk
     )
+    # Hashtable med kortverdiene. Burde ikke verdiene stige helt til A = 14?
+    $kortverdier = @{
+        "1" = 1
+        "2" = 2
+        "3" = 3
+        "4" = 4
+        "5" = 5
+        "6" = 6
+        "7" = 7
+        "8" = 8
+        "9" = 9
+        "10" = 10
+        "J" = 10
+        "Q" = 10
+        "K" = 10
+        "A" = 11
+    }
+
     $streng = ""
     foreach ($kort in $kortstokk) {
-        $streng = $streng + "$($kort.suit[0])" + $($kort.value[0]) + ","
-        # Skrive ut kortnavn og nummer for å sjekke om ting blir riktig.
-        #"$a$i $($kort.suit[0])$($kort.value[0]) `r`n"
+        $streng = $streng + "$($kort.suit[0])" + $($kort.value) + ","
+        # Slå opp i hastable for å få verdien til kortet, typecast til Int og legg sammen med foregående verdier.
+        $i = $i + [int]$kortverdier[$kort.value]
     }
 
     # Ved siste kjøring, lagre hele strengen fra foreach, minus siste karakter som var kommaet.
     try {
         $streng = $streng.Substring(0,$streng.Length-1)
+        # Legger på en newline her for å få riktig output.
+        $streng = $streng + "`r`n"
     }
     catch [System.Management.Automation.MethodInvocationException] {
         "String is empty."
     }
-
-    return $streng
+    # Returnerer både strengen med kortnavn og verdiene summert.
+    return $streng, $i
 }
 
 # Hvis det gikk bra å hente inn kortstokken, kjørt funksjonen.
 if ($fikkKortstokk) {
-    Write-Output "Kortstokk: $(kortstokkTilStreng -kortstokk $kortstokk)"
+    Write-Output "Kortstokk: $(kortstokkTilStreng -kortstokk $kortstokk) $i"
 }
