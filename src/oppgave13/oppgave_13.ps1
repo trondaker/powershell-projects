@@ -9,9 +9,9 @@ $tier = 'Basic'
 
 # Velge subscription
 Select-AzSubscription -SubscriptionID $subscriptionId
-#Set-AzContext $subscriptionId
 
-# Opprette resource-group hvis den ikke fins allerede
+# Opprette resource-group hvis den ikke fins allerede.
+# ErrorAction med SilentlyContinue er bare for å ikke stoppe opp hvis resource-group ikke fins.
 if(Get-AzResourceGroup -Name $resourceGroupName -ErrorAction SilentlyContinue)  
 {  
      Write-Host -ForegroundColor Magenta $resourceGroupName "Resource group already exists."  
@@ -21,10 +21,11 @@ else
      Write-Host -ForegroundColor Magenta $resourceGroupName "Resource group does not exist."  
      Write-Host -ForegroundColor Green "Creating the resource group." $resourceGroupName  
 
-     ## Create a new resource group  
+     # Gruppa fins ikke, oppretter ny.
      New-AzResourceGroup -Name $resourceGroupName -Location $location  
 }   
 
+# Opprette storage account hvis den ikke fins allerede
 if(Get-AzStorageAccount -ResourceGroupName $resourceGroupName -Name $storageAccount -ErrorAction SilentlyContinue)  
 {  
      Write-Host -ForegroundColor Magenta $storageAccount "Storage account already exists."     
@@ -33,7 +34,7 @@ else
 {  
      Write-Host -ForegroundColor Magenta "Storage account does not exist."  
      Write-Host -ForegroundColor Green "Creating the storage account" $storageAccount
-     ## Create a new Azure Storage Account  
+     # StorageAccount fins ikke, opprett ny. 
      New-AzStorageAccount -ResourceGroupName $resourceGroupName -Name $storageAccount -Location $location -SkuName Standard_LRS    
 }   
 
