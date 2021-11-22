@@ -12,7 +12,7 @@ on:
 # 2. Change these variables for your configuration:
 env:
   AZURE_FUNCTIONAPP_NAME: blackjack-function-ta    # set this to your application's name
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: 'https://github.com/trondaker/powershell-projects/tree/main/src/oppgave13'      # set this to the path to your web app project, defaults to the repository root
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: 'https://github.com/trondaker/powershell-projects/blob/main/src/oppgave_11.ps1'      # set this to the path to your web app project, defaults to the repository root
 
 jobs:
   build-and-deploy:
