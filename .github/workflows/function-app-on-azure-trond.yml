@@ -1,4 +1,4 @@
-name: Deploy blackjack function to existing Blackjack function-app.
+name: Deploy blackjack function to existing Blackjack function-app
 
 on:
   [push]
