@@ -53,18 +53,18 @@ if ($functionAppResource -eq $null)
   New-AzResource -ResourceType 'Microsoft.Web/Sites' -ResourceName $functionAppName -kind 'functionapp' -Location $location -ResourceGroupName $resourceGroupName -Properties $functionAppSettings -force
 }
 
-#========Creating AppInsight Resource========
+# Oppretter AppInsights-ressursene
 New-AzApplicationInsights -ResourceGroupName $resourceGroupName -Name $appInsightsName -Location $location
 $resource = Get-AzResource -Name $appInsightsName -ResourceType "Microsoft.Insights/components"
 $details = Get-AzResource -ResourceId $resource.ResourceId
 $appInsightsKey = $details.Properties.InstrumentationKey
 
-#========Retrieving Keys========
+# Trenger key1 fra min storage-account (key1 er bare generic navn, key2 brukes hvis key1 skal fases ut.)
 $keys = Get-AzStorageAccountKey -ResourceGroupName $resourceGroupName -AccountName $storageAccount
 $accountKey = $keys | Where-Object { $_.KeyName -eq 'Key1' } | Select-Object -ExpandProperty Value
 $storageAccountConnectionString = 'DefaultEndpointsProtocol=https;AccountName='+$storageAccount+';AccountKey='+$accountKey
 
-#========Defining Azure Function Settings========
+# Settings for selve function-app. Skulle version ha vært noe annet tro?
 $AppSettings =@{}
 $AppSettings =@{'APPINSIGHTS_INSTRUMENTATIONKEY' = $appInsightsKey;
                 'AzureWebJobsDashboard' = $storageAccountConnectionString;
@@ -73,4 +73,6 @@ $AppSettings =@{'APPINSIGHTS_INSTRUMENTATIONKEY' = $appInsightsKey;
                 'FUNCTIONS_WORKER_RUNTIME' = 'powershell';
                 'WEBSITE_CONTENTAZUREFILECONNECTIONSTRING' = $storageAccountConnectionString;
                 'WEBSITE_CONTENTSHARE' = $storageAccount;}
+
+# Binder app-settings og function-app sammen.                
 Set-AzWebApp -Name $functionAppName -ResourceGroupName $resourceGroupName -AppSettings $AppSettings
