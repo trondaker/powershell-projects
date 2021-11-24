@@ -5,10 +5,6 @@ on:
 
 env:
   AZURE_FUNCTIONAPP_NAME: blackjack-function-ta
-  FUNCTION_NAME: blackjack-function-ta    
-  SCRIPT_PATH: 'oppgave_11.ps1'   
-  RESOURCE_GROUP: trond-workshop
-  LOCATION: 'norwayeast'
 
 jobs:
   build-and-deploy:
