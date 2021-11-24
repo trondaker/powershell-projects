@@ -1,5 +1,5 @@
 {
-    "scriptFile": "../oppgave_11.ps1",
+    "scriptFile": "oppgave_11.ps1",
     "bindings": [
       {
         "authLevel": "function",
