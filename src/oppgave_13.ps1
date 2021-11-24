@@ -70,7 +70,7 @@ $AppSettings =@{'APPINSIGHTS_INSTRUMENTATIONKEY' = $appInsightsKey;
                 'AzureWebJobsDashboard' = $storageAccountConnectionString;
                 'AzureWebJobsStorage' = $storageAccountConnectionString;
                 'FUNCTIONS_EXTENSION_VERSION' = '~2';
-                'FUNCTIONS_WORKER_RUNTIME' = 'dotnet';
+                'FUNCTIONS_WORKER_RUNTIME' = 'powershell';
                 'WEBSITE_CONTENTAZUREFILECONNECTIONSTRING' = $storageAccountConnectionString;
                 'WEBSITE_CONTENTSHARE' = $storageAccount;}
 Set-AzWebApp -Name $functionAppName -ResourceGroupName $resourceGroupName -AppSettings $AppSettings
