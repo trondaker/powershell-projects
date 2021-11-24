@@ -1,0 +1,8 @@
+# Oppsett av oppgave 13 gjøres gjennom å kjøre oppgave_13.ps1 for å bygge rammeverket rundt selve funksjonen.
+# Blackjack-spillet kjøres fra oppgave_11.ps1 og må vises til i function.json. Denne fila må ligge i samme folder
+# som selve scriptet - og hvis scriptfila ikke heter run.ps1, må "scriptfile" benyttes i function.json.
+
+# Når rammeverket er bygd, kjøres følgende az-kommando for å zip-deploye oppgave_11.ps1 som http-funksjon i Azure:
+
+az webapp deployment source config-zip --resource-group trond-workshop --name blackjack-function-ta --src ./blackjack-function.zip
+
