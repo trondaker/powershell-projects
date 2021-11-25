@@ -4,5 +4,8 @@
 
 # Når rammeverket er bygd, kjøres følgende az-kommando for å zip-deploye oppgave_11.ps1 som http-funksjon i Azure:
 
-az webapp deployment source config-zip --resource-group trond-workshop --name blackjack-function-ta --src ./blackjack-function.zip
+az webapp deployment source config-zip --resource-group TrondAker --name blackjack-function-ta --src ./blackjack-function.zip
 
+# Eller powershell:
+
+Publish-AzWebapp -ResourceGroupName TrondAker -Name blackjack-function-ta -ArchivePath ./blackjack-function.zip
