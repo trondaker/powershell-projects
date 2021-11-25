@@ -22,5 +22,5 @@ jobs:
     - name: Publish WebJob
       uses: srijken/azure-webjob-deploy@master
       with: 
-        zip-file: blackjack-function.zip
+        zip-file: src/blackjack-function.zip
         publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }} 
