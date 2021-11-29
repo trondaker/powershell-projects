@@ -1,14 +1,14 @@
-# Min URL: https://trond-blackjack.azurewebsites.net/api/Blackjack-aker?code=mdBZQS0RbJB3CNXHkOFaKLVCj5D2uCWskCRFMoaGdjgG2rOfksHeeQ==
+# Min URL: https://blackjack-function-ta.azurewebsites.net/api/blackjack-function?code=QbYIXPXX4GQUapZYz/1wv3zjMVMl6tMYDNKIBxxMrQ5fUou3qeyQ6w==
 
 <# Fra kjøring av function:
-2021-11-08T09:26:34.036 [Information] OUTPUT: Kortstokk: H8,HQ,HJ,H10,D10,C7,SK,C6,HK,HA,D7,D2,H7,H3,C3,S10,C4,S3,CJ,S8,D8,H2,S7,CK,C9,SJ,H6,D6,D5,DA,H9,S6,D4,SA,C5,DQ,S2,SQ,C2,C8,S4,D9,DJ,H5,D3,H4,CQ,CA,C10,S9,DK,S5
-2021-11-08T09:26:34.052 [Information] OUTPUT: Poengsum:380
-2021-11-08T09:26:34.680 [Information] OUTPUT: meg: H8,HQ
-2021-11-08T09:26:34.681 [Information] OUTPUT: magnus: HJ,H10
-2021-11-08T09:26:34.682 [Information] OUTPUT: Kortstokk: D10,C7,SK,C6,HK,HA,D7,D2,H7,H3,C3,S10,C4,S3,CJ,S8,D8,H2,S7,CK,C9,SJ,H6,D6,D5,DA,H9,S6,D4,SA,C5,DQ,S2,SQ,C2,C8,S4,D9,DJ,H5,D3,H4,CQ,CA,C10,S9,DK,S5
-2021-11-08T09:26:34.686 [Information] OUTPUT: 18
-2021-11-08T09:26:34.690 [Information] OUTPUT: Ingen fikk blackjack, men Magnus kom nærmere 21 enn meg, han vant!
-2021-11-08T09:26:34.719 [Information] Executed 'Functions.Blackjack-aker' (Succeeded, Id=8078f41f-378d-4b61-bab9-9f4da8ff16e7, Duration=21335ms)
+Kortstokk: D6,H6,D9,D8,S8,CK,SK,H5,C7,HK,S4,S5,C9,C10,D10,CQ,SQ,HA,S3,C5,H8,D3,DJ,D4,HQ,DQ,SA,H10,HJ,H2,C6,S2,D7,C4,C8,H9,H3,D2,H7,H4,D5,CJ,DA,C3,S7,S10,S6,DK,S9,C2,SJ,CA 
+Poengsum:380
+meg: D6,H6 
+magnus: D9,D8 
+Kortstokk: S8,CK,SK,H5,C7,HK,S4,S5,C9,C10,D10,CQ,SQ,HA,S3,C5,H8,D3,DJ,D4,HQ,DQ,SA,H10,HJ,H2,C6,S2,D7,C4,C8,H9,H3,D2,H7,H4,D5,CJ,DA,C3,S7,S10,S6,DK,S9,C2,SJ,CA 
+Jeg trekker kort, fortsatt under 17.
+Ingen fikk blackjack, men jeg kom nærmere 21 enn Magnus, jeg vant!
+2021-11-29T12:12:50.901 [Information] Executed 'Functions.blackjack-function' (Succeeded, Id=f9cd44f5-e72a-4120-b69c-a1e4e6cafb28, Duration=600ms)
 #>
 
 ## The $TriggerMetadata parameter contains information about the triggered function. The sys property includes data like the date and time it is triggered, the HTTP method used to trigger it, and a unique GUID for the function's execution.
