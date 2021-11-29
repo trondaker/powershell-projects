@@ -1,4 +1,4 @@
-# Setting some parameters before creating infra.
+# Setting some parameters before creating infra
 $location = 'Norway East'
 $resourceGroupName = 'TrondAker'
 $storageAccount = 'trondstorageaccountz'
