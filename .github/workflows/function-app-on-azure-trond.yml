@@ -1,7 +1,9 @@
 name: Deploy blackjack function to existing Blackjack function-app
 
 on:
-  [push]
+  push:
+    paths:
+      - 'src/oppgave_13.ps1'
 
 env:
   AZURE_FUNCTIONAPP_NAME: blackjack-function-ta
