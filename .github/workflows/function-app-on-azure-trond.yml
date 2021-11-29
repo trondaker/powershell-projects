@@ -1,3 +1,8 @@
+# yaml to zip-deploy locally zipped files to azure function.
+# Folder structure has to be as blackjack-function.zip is structured with:
+# host.json in the parent directory.
+# function.json and *.ps1 file in the folder with the same name as the AZURE_FUNCTIONAPP_NAME
+# If you use a different filename then run.ps1, add scriptfile to the function.json.
 name: Deploy blackjack function to existing Blackjack function-app
 
 on:
