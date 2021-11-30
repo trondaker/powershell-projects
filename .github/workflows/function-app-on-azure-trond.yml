@@ -3,6 +3,7 @@
 # host.json in the parent directory.
 # function.json and *.ps1 file in the folder with the same name as the AZURE_FUNCTIONAPP_NAME
 # If you use a different filename then run.ps1, add scriptfile to the function.json.
+
 name: Deploy blackjack function to existing Blackjack function-app
 
 on:
@@ -29,5 +30,5 @@ jobs:
     - name: Publish WebJob
       uses: srijken/azure-webjob-deploy@master
       with: 
-        zip-file: src/blackjack-function.zip
+        zip-file: src/upload.zip
         publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }} 
